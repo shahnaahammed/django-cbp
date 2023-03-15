@@ -28,7 +28,6 @@ DEBUG = os.environ['DEBUG']
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -132,6 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL= 'itreporting-home'
+LOGIN_REDIRECT_URL = 'itreporting-home'
 
 LOGIN_URL = 'login'

@@ -12,7 +12,11 @@ def register(request):
             form.save()
             messages.success(request, f'Your account has been created! Now you can login!')
 
-        return redirect('login')
+            return redirect('login')
+        else:
+            messages.warning(request, 'Invalid input')
+
+            return redirect('itreporting-home')
     else:
         form = UserRegisterForm()
         return render(request, 'users/register.html', {'form': form, 'title': 'Register'})
@@ -33,8 +37,8 @@ def profile(request):
         u_form = UserUpdateForm(instance = request.user)
         p_form = ProfileUpdateForm(instance = request.user.profile)
         context = {
-            'uForm': u_form,
-            'pForm': p_form
+            'u_form': u_form,
+            'p_form': p_form
         }
 
         return render(request, 'users/profile.html', context)
